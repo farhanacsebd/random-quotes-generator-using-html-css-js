@@ -134,5 +134,11 @@ quoteBtn.addEventListener('click',function(){
 
 copyBtn.addEventListener('click',function(){
     navigator.clipboard.writeText(quoteText.innerHTML);
-    alert('copy')
-})
+    alert('copied')
+});
+
+
+twitterBtn.addEventListener("click", ()=>{
+    let tweetUrl = `https://twitter.com/intent/tweet?url=${quoteText.innerText}`;
+    window.open(tweetUrl, "_blank");
+});
