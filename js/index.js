@@ -114,11 +114,11 @@ const quotes = [{
 ]
 
 const quoteText = document.querySelector(".quote");
-quoteBtn = document.querySelector("button");
-authorName = document.querySelector(".name");
-speechBtn = document.querySelector(".speech");
-copyBtn = document.querySelector(".copy");
-twitterBtn = document.querySelector(".twitter");
+const quoteBtn = document.querySelector("button");
+const authorName = document.querySelector(".name");
+const speechBtn = document.querySelector(".speech");
+const copyBtn = document.querySelector(".copy");
+const twitterBtn = document.querySelector(".twitter");
 
 quoteBtn.addEventListener('click',function(){
 
@@ -129,4 +129,10 @@ quoteBtn.addEventListener('click',function(){
     
     quoteText.innerHTML = quotes[author].quote;
     authorName.innerHTML = quotes[author].author;
+})
+
+
+copyBtn.addEventListener('click',function(){
+    navigator.clipboard.writeText(quoteText.innerHTML);
+    alert('copy')
 })
